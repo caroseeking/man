@@ -151,7 +151,7 @@ def background_process():
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    return render_template('index.php')
 
 @app.route("/map", methods=['POST', 'GET'])
 def get_information():
@@ -188,7 +188,7 @@ def get_information():
 
         return render_template('map.html', init_points = init_points, search_term=search_term, steps_remaining=steps_remaining, departure=departure, destination=destination)
     else:
-        return render_template('index.html', form=form)
+        return render_template('index.php', form=form)
 
 if __name__ == '__main__':
     app.run()
